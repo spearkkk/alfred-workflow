@@ -224,6 +224,6 @@ dmypy.json
 # End of https://www.gitignore.io/api/macos,python,intellij+all
 
 .workflow
-.info.plist
+info.plist
 .Alfred_Workflow-1.37.2.dist-info
 
