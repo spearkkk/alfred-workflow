@@ -39,7 +39,7 @@ def main(wf):
         if 'entryExpose' in another and 'meanExpose' in another:
             another_keyword = another['entryExpose']
             another_meaning = another['meanExpose']
-            wf.add_item(title=u"%s:     %s" % (another_keyword, another_meaning),
+            wf.add_item(title=u"%s: %s" % (another_keyword, another_meaning),
                         autocomplete=another_keyword,
                         arg=another_keyword,
                         valid=True)
@@ -54,7 +54,7 @@ def main(wf):
                 words = parent['items'][0]['meansCollector'][0]['means']
                 for word in words:
                     meaning = word['value']
-                    wf.add_item(title=u"%s:     %s" % (searched_keyword, meaning),
+                    wf.add_item(title=u"%s: %s" % (searched_keyword, meaning),
                                 autocomplete=searched_keyword,
                                 arg=searched_keyword,
                                 valid=True)
