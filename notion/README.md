@@ -3,6 +3,8 @@ This workflow is so simple and useful to find contents by text.
 You know, there is quick search function in Notion.  
 So this workflow uses the function, actually un-officially API.
 
+**[Download](./search_in_notion.alfredworkflow)**
+
 # How to Use
 First of all, you find your token value.
 Please refer to followings:
