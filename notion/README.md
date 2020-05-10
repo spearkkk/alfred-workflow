@@ -1,6 +1,6 @@
 # Notion Search
-This workflow is so simple and useful to find contents by text.
-You know, there is quick search function in Notion.
+This workflow is so simple and useful to find contents by text.  
+You know, there is quick search function in Notion.  
 So this workflow uses the function, actually un-officially API.
 
 # How to Use
@@ -22,10 +22,10 @@ Default keyword is `0nt-init`, type it in Alfred.
 After initializing, you can search contents by text.     
 Just type `0nt [text what you want to search]` in Alfred.
 
-* You can see `created_itme` of page if you <kbd>ctrl</kbd>.
-* You can see `tags` of page if you <kbd>cmd</kbd>.
-* You can redirect to page in Web browser if you <kbd>ctrl</kbd> + <kbd>enter</kbd>.
-* You can redirect to page in Notion Application if you <kbd>enter</kbd>
+* You can see `created_itme` of page if you type <kbd>ctrl</kbd>.
+* You can see `tags` of page if you type <kbd>cmd</kbd>.
+* You can redirect to page in Web browser if you type <kbd>ctrl</kbd> + <kbd>enter</kbd>.
+* You can redirect to page in Notion Application if you type <kbd>enter</kbd>
 
 ## Refresh Token
 If you set mis-token, you can refresh your token.  
