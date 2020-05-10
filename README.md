@@ -6,3 +6,4 @@
  - [IDEA](https://github.com/bchatard/alfred-jetbrains#readme)
  - [Pocket](https://github.com/fniephaus/alfred-pocket/)
  - [Things](https://github.com/xilopaint/alfred-things)
+ - [Notion Search](notion/README.md)

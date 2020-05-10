@@ -40,6 +40,7 @@ def get_parsed_data(user_shared_pages):
 
 
 def main(wf):
+    wf.clear_cache()
     try:
         token = wf.get_password('token')
         log.debug("token: %s" % token)
