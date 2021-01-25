@@ -40,7 +40,7 @@ def get_translated_data(sentence, source, destination):
 
 
 def get_lang_argument(sentence):
-    code = re.search('(ko|en|zh-cn|zh-tw|es|jp)', sentence)
+    code = re.search('(ko|en|zh-cn|zh-tw|es)', sentence)
     if code:
         log.debug("code: %s" % code.group(1))
         return code.group(1)
