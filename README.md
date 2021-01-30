@@ -8,3 +8,4 @@
  - [Things](https://github.com/xilopaint/alfred-things)
  - [Notion Search](notion/README.md)
  - [Bear](https://github.com/drgrib/alfred-bear)
+ - [Manipulator](https://github.com/TheSecEng/Manipulator)
