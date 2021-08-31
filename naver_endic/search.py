@@ -1,4 +1,6 @@
+# coding=utf-8
 import sys
+import re
 
 from workflow import web, Workflow
 
@@ -22,6 +24,8 @@ def search_keyword(keyword):
 def main(wf):
     keyword = wf.args[0]
 
+    log.debug('keyword: %s' % keyword)
+
     # to set next step when 'enter' is clicked
     wf.add_item(title='NAVER Endic.: \'%s\'' % keyword,
                 subtitle="search in web page.",
@@ -33,17 +37,9 @@ def main(wf):
         return search_keyword(keyword)
 
     results = wf.cached_data('naver_endic_%s' % keyword, search, max_age=3600)
-    anothers = results['searchResultMap']['searchResultListMap']['RECOMMENDENTRY']['items']
 
-    for another in anothers:
-        if 'entryExpose' in another and 'meanExpose' in another:
-            another_keyword = another['entryExpose']
-            another_meaning = another['meanExpose']
-            wf.add_item(title=u"%s: %s" % (another_keyword, another_meaning),
-                        autocomplete=another_keyword,
-                        arg=another_keyword,
-                        valid=True)
-
+    html = re.compile(r'(\([^)]*\)|<[^>]*>|;)')
+    multiple_space = re.compile(r'\s+')
     if 'searchResultMap' in results and 'searchResultListMap' in results['searchResultMap']:
         if 'WORD' in results['searchResultMap']['searchResultListMap']:
             parent = results['searchResultMap']['searchResultListMap']['WORD']
@@ -53,7 +49,9 @@ def main(wf):
                     parent['items'][0]['meansCollector']) > 0 and 'means' in parent['items'][0]['meansCollector'][0]:
                 words = parent['items'][0]['meansCollector'][0]['means']
                 for word in words:
-                    meaning = word['value']
+                    log.debug('word: %s' % word['value'])
+                    meaning = multiple_space.sub('', html.sub('', word['value']))
+
                     wf.add_item(title=u"%s: %s" % (searched_keyword, meaning),
                                 autocomplete=searched_keyword,
                                 arg=searched_keyword,
